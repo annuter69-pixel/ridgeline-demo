@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridgeline Lawn &amp; Landscape</title>
+<meta name="description" content="Lawn care, landscaping and snow removal for Corry, Union City and northern Erie County, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{
+  --bg:#F3F5EF;
+  --surface:#FFFFFF;
+  --ink:#16241C;
+  --ink-soft:#4A5A4F;
+  --line:#D5DCCF;
+  --spruce:#1E3B2C;
+  --spruce-2:#27493A;
+  --moss:#5E8A3A;
+  --moss-2:#6C9A44;
+  --gold:#E0A91E;
+  --gold-ink:#1B1606;
+  --on-spruce:#EEF3EA;
+  --on-spruce-soft:#B9C8BC;
+  --display:"Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius:6px;
+  --wrap:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1813; --surface:#16221B; --ink:#E6EDE5; --ink-soft:#A6B5A9; --line:#2A3A30;
+    --spruce:#132A1F; --spruce-2:#1B3528; --moss:#86B25A; --moss-2:#7AA64F;
+    --gold:#F0B92E; --on-spruce:#EEF3EA; --on-spruce-soft:#A9BBAE;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1813; --surface:#16221B; --ink:#E6EDE5; --ink-soft:#A6B5A9; --line:#2A3A30;
+  --spruce:#132A1F; --spruce-2:#1B3528; --moss:#86B25A; --moss-2:#7AA64F;
+  --gold:#F0B92E; --on-spruce:#EEF3EA; --on-spruce-soft:#A9BBAE;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.label{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* demo ribbon */
+.ribbon{background:var(--gold);color:var(--gold-ink);font-size:.85rem;text-align:center;padding:6px 16px;font-weight:600}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--spruce);color:var(--on-spruce)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{flex:none}
+.brand b{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:1.15rem;letter-spacing:.01em;line-height:1}
+.brand small{display:block;font-family:var(--display);font-stretch:85%;font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-spruce-soft);margin-top:3px}
+nav.links{display:flex;gap:22px;font-weight:600;font-size:.95rem}
+nav.links a{text-decoration:none;color:var(--on-spruce-soft)}
+nav.links a:hover{color:var(--on-spruce)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800;font-stretch:100%;font-size:.95rem;padding:12px 20px;border-radius:var(--radius);border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-ghost{background:transparent;color:var(--on-spruce);box-shadow:inset 0 0 0 2px rgba(238,243,234,.45)}
+.top .btn{padding:10px 16px;font-size:.9rem}
+@media (max-width:860px){nav.links{display:none}}
+
+/* hero: freshly mowed stripes */
+.hero{position:relative;color:var(--on-spruce);background:var(--spruce-2);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,
+    #2E5A3F 0 90px,#3A6C4A 90px 180px);
+  opacity:.95}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,42,31,.94) 0%,rgba(19,42,31,.78) 45%,rgba(19,42,31,.15) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:72px 84px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:48px;align-items:end}
+.hero .label{color:var(--gold)}
+.hero h1{font-weight:900;font-stretch:118%;font-size:clamp(2.3rem,6vw,4.4rem);margin-top:14px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lede{margin-top:20px;max-width:34em;font-size:1.15rem;color:var(--on-spruce-soft)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.phone-line{margin-top:18px;font-size:.95rem;color:var(--on-spruce-soft)}
+.phone-line strong{color:var(--on-spruce);font-family:var(--display);font-weight:800;letter-spacing:.02em;user-select:all}
+.facts{list-style:none;margin:0;padding:22px 24px;background:rgba(10,24,17,.55);border:1px solid rgba(238,243,234,.16);border-radius:var(--radius);display:grid;gap:14px;backdrop-filter:blur(3px)}
+.facts li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline}
+.facts .n{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:1.6rem;color:var(--gold);font-variant-numeric:tabular-nums;min-width:3.2ch}
+.facts span{color:var(--on-spruce-soft);font-size:.98rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:52px 60px;gap:32px}}
+
+/* sections */
+section.block{padding-block:84px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:40px}
+.head .label{color:var(--moss)}
+.head h2{font-weight:900;font-stretch:110%;font-size:clamp(1.9rem,4vw,2.8rem);margin-top:10px}
+.head p{color:var(--ink-soft);max-width:36em}
+@media (max-width:760px){.head{grid-template-columns:1fr}section.block{padding-block:60px}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.svc{background:var(--surface);padding:28px 26px 26px;display:flex;flex-direction:column;gap:10px}
+.svc svg{color:var(--moss)}
+.svc h3{font-size:1.3rem;font-weight:800;font-stretch:105%;margin-top:6px}
+.svc p{color:var(--ink-soft);font-size:.98rem}
+.svc .price{margin-top:auto;padding-top:12px;font-family:var(--display);font-weight:700;font-stretch:90%;font-size:.92rem;color:var(--ink);border-top:1px dashed var(--line)}
+.svc .price b{color:var(--moss);font-weight:900}
+@media (max-width:900px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.services{grid-template-columns:1fr}}
+
+/* season calendar */
+.season{background:var(--surface);border-block:1px solid var(--line)}
+.cal-scroll{overflow-x:auto;padding-bottom:6px}
+.cal{min-width:760px;display:grid;grid-template-columns:150px repeat(12,minmax(0,1fr));row-gap:10px;font-size:.9rem}
+.cal .m{font-family:var(--display);font-weight:700;font-stretch:85%;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;color:var(--ink-soft);text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.cal .m.now{color:var(--ink);box-shadow:inset 0 -3px 0 var(--gold)}
+.cal .rl{grid-column:1;font-weight:700;padding-right:12px;align-self:center}
+.cal .bar{height:30px;border-radius:4px;display:flex;align-items:center;padding-inline:10px;font-size:.78rem;font-weight:700;white-space:nowrap;overflow:hidden}
+.bar.green{background:var(--moss);color:#fff}
+.bar.soft{background:color-mix(in srgb,var(--moss) 28%,transparent);color:var(--ink)}
+.bar.gold{background:var(--gold);color:var(--gold-ink)}
+.bar.snow{background:color-mix(in srgb,var(--ink-soft) 22%,transparent);color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink-soft) 35%,transparent)}
+.cal-note{margin-top:18px;color:var(--ink-soft);font-size:.95rem}
+
+/* why */
+.why{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.why-list{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.why-list li{display:grid;grid-template-columns:34px 1fr;gap:14px}
+.check{width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--moss) 18%,transparent);color:var(--moss);display:grid;place-items:center}
+.why-list h3{font-size:1.1rem;font-weight:800;font-stretch:100%}
+.why-list p{color:var(--ink-soft);font-size:.98rem;margin-top:3px}
+.reviews{display:grid;gap:16px}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.stars{color:var(--gold);letter-spacing:2px;font-size:1rem}
+.review blockquote{margin:8px 0 10px;font-size:1.02rem}
+.review footer{font-size:.88rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tag{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 6px;color:var(--ink-soft)}
+@media (max-width:860px){.why{grid-template-columns:1fr}}
+
+/* area + quote */
+.quote-sec{background:var(--spruce);color:var(--on-spruce)}
+.quote-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
+.quote-sec .label{color:var(--gold)}
+.quote-sec h2{font-weight:900;font-stretch:110%;font-size:clamp(1.9rem,4vw,2.8rem);margin-top:10px}
+.quote-sec .intro{color:var(--on-spruce-soft);margin-top:14px;max-width:32em}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
+.towns li{padding:6px 12px;border-radius:999px;border:1px solid rgba(238,243,234,.25);font-size:.92rem}
+.contact{margin-top:30px;display:grid;gap:10px;font-size:.98rem;color:var(--on-spruce-soft)}
+.contact strong{color:var(--on-spruce);font-weight:700;user-select:all}
+form.quote{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+.field label,.field legend{font-weight:700;font-size:.9rem}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:11px 12px;width:100%}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--moss);outline-offset:0;border-color:var(--moss)}
+fieldset.field{border:0;padding:0;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{white-space:nowrap;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;cursor:pointer;background:var(--bg)}
+.chips input{accent-color:var(--moss);margin:0}
+.chips label:has(input:checked){border-color:var(--moss);background:color-mix(in srgb,var(--moss) 14%,var(--bg))}
+form.quote .btn{grid-column:1/-1;justify-content:center;padding:15px}
+.form-msg{grid-column:1/-1;background:color-mix(in srgb,var(--moss) 14%,var(--surface));border:1px solid var(--moss);border-radius:4px;padding:14px 16px;font-size:.96rem}
+.fine{grid-column:1/-1;font-size:.82rem;color:var(--ink-soft);margin-top:-4px}
+@media (max-width:860px){.quote-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:520px){form.quote{grid-template-columns:1fr;padding:22px}}
+
+/* footer */
+.foot{background:var(--spruce);color:var(--on-spruce-soft);border-top:1px solid rgba(238,243,234,.12);font-size:.9rem}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="ribbon">Demo website · Ridgeline is a fictional company created as a portfolio sample</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Ridgeline Lawn and Landscape, home">
+      <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true">
+        <rect width="38" height="38" rx="6" fill="#E0A91E"/>
+        <path d="M4 28 L14 14 L20 21 L25 15 L34 28 Z" fill="#1E3B2C"/>
+        <path d="M4 31 H34" stroke="#1E3B2C" stroke-width="2.5"/>
+      </svg>
+      <span><b>RIDGELINE</b><small>Lawn &amp; Landscape</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#season">Our year</a>
+      <a href="#why">Why us</a>
+      <a href="#quote">Service area</a>
+    </nav>
+    <a class="btn btn-gold" href="#quote">Free quote</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">Corry · Union City · Northern Erie County</p>
+        <h1>Lawns cut clean. Beds edged sharp. Driveways plowed <em>by 6&nbsp;a.m.</em></h1>
+        <p class="lede">Ridgeline is a local, owner-run crew handling mowing, landscaping and snow removal from April cleanups to March thaw. One call covers your property all year.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="#quote">Get a free quote</a>
+          <a class="btn btn-ghost" href="#services">See services &amp; pricing</a>
+        </div>
+        <p class="phone-line">Or call Dave directly: <strong>(814) 555-0142</strong></p>
+      </div>
+      <ul class="facts" aria-label="At a glance">
+        <li><span class="n">12</span><span>seasons working lawns in the Corry area</span></li>
+        <li><span class="n">24h</span><span>turnaround on written quotes</span></li>
+        <li><span class="n">$1M</span><span>liability coverage, certificate on request</span></li>
+        <li><span class="n">1</span><span>crew assigned to your yard, every visit</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="label">Services</p>
+          <h2>Everything your yard needs, priced up front.</h2>
+        </div>
+        <p>Starting prices are for a typical quarter-acre lot in town. We walk the property before quoting, and the number we write down is the number you pay.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 20h18M5 20V9m4 11V6m4 14v-9m4 9V7"/></svg>
+          <h3>Weekly mowing</h3>
+          <p>Mow, trim, edge along walks and drives, and blow off hard surfaces. Striped finish on request.</p>
+          <p class="price">From <b>$40</b> / visit</p>
+        </article>
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-5-3-8-7-8-11a8 8 0 0 1 16 0c0 4-3 8-8 11z"/><path d="M12 21V9"/></svg>
+          <h3>Spring &amp; fall cleanup</h3>
+          <p>Leaf and debris removal, bed cleanout, perennial cutback, and a first or last mow of the season.</p>
+          <p class="price">From <b>$225</b> / cleanup</p>
+        </article>
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 18c3-1 6-1 9 0s6 1 9 0"/><path d="M3 13c3-1 6-1 9 0s6 1 9 0"/></svg>
+          <h3>Mulch &amp; bed edging</h3>
+          <p>Fresh spade edge, weed pull, and double-shredded hardwood mulch laid 2–3 inches deep.</p>
+          <p class="price">From <b>$85</b> / yard installed</p>
+        </article>
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M6 14v-3h12v3M9 11V8h6v3"/></svg>
+          <h3>Patios &amp; retaining walls</h3>
+          <p>Paver patios, walkways and block walls built on a compacted gravel base that holds through frost heave.</p>
+          <p class="price">From <b>$18</b> / sq ft</p>
+        </article>
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg>
+          <h3>Snow plowing</h3>
+          <p>Seasonal contracts for driveways and small lots. Plowed at 2 inches, finished before your commute.</p>
+          <p class="price">From <b>$375</b> / season</p>
+        </article>
+        <article class="svc">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20c4 0 6-3 6-8V4c-3 3-6 5-6 10v6zM20 20c-4 0-6-3-6-8V4c3 3 6 5 6 10v6z"/></svg>
+          <h3>Shrub &amp; hedge trimming</h3>
+          <p>Shaped by hand and hedge trimmer, clippings hauled away. Twice a season keeps them tight.</p>
+          <p class="price">From <b>$60</b> / visit</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block season" id="season">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="label">Our year</p>
+          <h2>A Western PA yard runs on a calendar.</h2>
+        </div>
+        <p>Lake-effect winters and a short growing season mean timing matters. Here's when each job happens, so you know what to book and when.</p>
+      </div>
+      <div class="cal-scroll" role="region" aria-label="Seasonal service calendar" tabindex="0">
+        <div class="cal" id="cal">
+          <div style="grid-column:1"></div>
+          <div class="m">Jan</div><div class="m">Feb</div><div class="m">Mar</div><div class="m">Apr</div><div class="m">May</div><div class="m">Jun</div><div class="m">Jul</div><div class="m">Aug</div><div class="m">Sep</div><div class="m">Oct</div><div class="m">Nov</div><div class="m">Dec</div>
+
+          <div class="rl">Mowing</div>
+          <div style="grid-column:6 / span 5" class="bar green">Weekly, May through September</div>
+          <div style="grid-column:11 / span 1" class="bar soft">1–2 wks</div>
+
+          <div class="rl">Cleanups</div>
+          <div style="grid-column:5 / span 2" class="bar gold">Spring cleanup</div>
+          <div style="grid-column:11 / span 2" class="bar gold">Fall leaves</div>
+
+          <div class="rl">Mulch &amp; beds</div>
+          <div style="grid-column:6 / span 2" class="bar green">Mulch install</div>
+
+          <div class="rl">Hardscape</div>
+          <div style="grid-column:6 / span 5" class="bar soft">Patios, walls, walkways (ground thawed)</div>
+
+          <div class="rl">Snow</div>
+          <div style="grid-column:2 / span 3" class="bar snow">Plowing Jan to Mar</div>
+          <div style="grid-column:13 / span 1" class="bar snow">Dec</div>
+        </div>
+      </div>
+      <p class="cal-note" id="cal-note">Booking tip: snow contracts fill by mid-November, and spring cleanup slots go fast once the ground firms up in April.</p>
+    </div>
+  </section>
+
+  <section class="block" id="why">
+    <div class="wrap why">
+      <div>
+        <p class="label" style="color:var(--moss)">Why Ridgeline</p>
+        <h2 style="font-weight:900;font-stretch:110%;font-size:clamp(1.9rem,4vw,2.8rem);margin:10px 0 30px">Small crew, same faces, work you can check.</h2>
+        <ul class="why-list">
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+            <div><h3>Owner on every job</h3><p>Dave runs the crew himself. The person who quotes your yard is the person who shows up.</p></div></li>
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+            <div><h3>Text when we're done</h3><p>You get a photo of the finished yard after every visit, so you never wonder whether we came.</p></div></li>
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+            <div><h3>No contracts for mowing</h3><p>Pay per visit and cancel any time. Snow is the only service with a season contract.</p></div></li>
+          <li><span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+            <div><h3>Fully insured</h3><p>General liability and workers' comp. We'll send the certificate before we start.</p></div></li>
+        </ul>
+      </div>
+      <div class="reviews" aria-label="Sample reviews">
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>They plowed us out before my 5 a.m. shift all winter. Not once did I have to shovel the end of the driveway.</blockquote>
+          <footer><span>Homeowner, Union City</span><span class="tag">Sample review</span></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>The paver patio went in over two days and hasn't moved after two winters. Clean site every evening.</blockquote>
+          <footer><span>Homeowner, Corry</span><span class="tag">Sample review</span></footer>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <blockquote>We manage four rentals and Ridgeline handles all of them. The photo after each visit saves me a drive.</blockquote>
+          <footer><span>Property manager, Waterford</span><span class="tag">Sample review</span></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block quote-sec" id="quote">
+    <div class="wrap quote-grid">
+      <div>
+        <p class="label">Service area &amp; quotes</p>
+        <h2>Tell us about your yard. We'll quote within a day.</h2>
+        <p class="intro">We work within about 20 miles of Corry. If you're just outside the list, ask anyway.</p>
+        <ul class="towns">
+          <li>Corry</li><li>Union City</li><li>Waterford</li><li>Spartansburg</li><li>Wattsburg</li><li>Columbus</li><li>Clymer, NY</li><li>Sugar Grove</li>
+        </ul>
+        <div class="contact">
+          <div>Phone: <strong>(814) 555-0142</strong></div>
+          <div>Email: <strong>hello@ridgelinelawn.example</strong></div>
+          <div>Hours: Mon–Sat, 7 a.m.–6 p.m. Snow calls 24/7 in season.</div>
+        </div>
+      </div>
+
+      <form class="quote" id="quote-form" name="quote" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="quote">
+        <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+        <div class="field"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field full"><label for="q-addr">Property address</label><input id="q-addr" name="address" autocomplete="street-address" placeholder="Street, town"></div>
+        <fieldset class="field full">
+          <legend>What do you need?</legend>
+          <div class="chips">
+            <label><input type="checkbox" id="s-mow" name="service-mowing" value="yes" checked> Mowing</label>
+            <label><input type="checkbox" id="s-clean" name="service-cleanup" value="yes"> Cleanup</label>
+            <label><input type="checkbox" id="s-mulch" name="service-mulch" value="yes"> Mulch &amp; beds</label>
+            <label><input type="checkbox" id="s-hard" name="service-hardscape" value="yes"> Patio / wall</label>
+            <label><input type="checkbox" id="s-snow" name="service-snow" value="yes"> Snow plowing</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="q-size">Lot size</label>
+          <select id="q-size" name="size"><option>Under ¼ acre</option><option selected>¼ – ½ acre</option><option>½ – 1 acre</option><option>Over 1 acre</option></select></div>
+        <div class="field"><label for="q-when">Start</label>
+          <select id="q-when" name="when"><option>As soon as possible</option><option>Next month</option><option>Next season</option></select></div>
+        <div class="field full"><label for="q-notes">Anything else?</label><textarea id="q-notes" name="notes" placeholder="Gate code, dogs in the yard, steep slope…"></textarea></div>
+        <button class="btn btn-gold" type="submit">Request my free quote</button>
+        <p class="fine">No spam, no sales calls. We only use your number to talk about this job.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© Ridgeline Lawn &amp; Landscape · Corry, PA</span>
+    <span>Demo site · sample content only</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // highlight the current month on the season calendar
+  var months = document.querySelectorAll('#cal .m');
+  var now = new Date().getMonth();
+  if (months[now]) months[now].classList.add('now');
+
+})();
+</script>
+</body>
+</html>
